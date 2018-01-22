@@ -4,29 +4,33 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div class="controls">
-        <div class="texts control">
-            <label>Texts</label>
-            <textarea name="txt" id="txt" placeholder="Text"></textarea>
-            <select name="txt_type" id="txt_type">
-                <option value="p">Paragraph</option>
-                <option value="h1">H1</option>
-                <option value="h2">H2</option>
-            </select>
-            <button id="add_text">Add text</button>
-        </div>
-        <div class="dimensions control">
-            <label>Dimensions</label>
-            <input type="number" name="height" id="height" value="200" placeholder="Height"/>
-            <input type="number" name="width" id="width" value="200" placeholder="Width"/>
-        </div>
-        <div class="graphics control">
-            <label>Graphics</label>
-            <input type="color" name="bg_color" id="bg_color" placeholder="Background color"/>
-            <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
+    <div class="controller">
+        <div class="controls">
+            <div class="texts control">
+                <label class="section-header">Content</label>
+                <textarea name="txt" id="txt" placeholder="Text"></textarea>
+                <select name="txt_type" id="txt_type">
+                    <option value="p">Paragraph</option>
+                    <option value="h1">H1</option>
+                    <option value="h2">H2</option>
+                </select>
+                <button id="add_text">Add text</button>
+            </div>
+            <div class="dimensions control">
+                <label class="section-header">Dimensions</label>
+                <input type="number" name="height" id="height" value="200" placeholder="Height"/>
+                <input type="number" name="width" id="width" value="200" placeholder="Width"/>
+            </div>
+            <div class="graphics control">
+                <label class="section-header">Graphics</label>
+                <input type="color" name="bg_color" id="bg_color" placeholder="Background color"/>
+                <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
+            </div>
         </div>
     </div>
     <div id="banner">

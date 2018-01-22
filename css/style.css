@@ -5,6 +5,10 @@
 }
 
 /****Controls****/
+textarea, input, select, button{display: block; margin-bottom:5px;}
+.controller{width:1024px;margin:0 auto;}
+.controls{width:400px;}
+label.section-header{font-size:20px;}
 .controls label{display: block; margin-bottom:5px;}
 
 .controls .control{margin-bottom:20px;}
