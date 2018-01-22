@@ -2,6 +2,16 @@ $(document).ready(function(){
 
     var banner = $("#banner");
 
+    /****Settings */
+    $("#show-grid-lines").on('click',function(){
+        if($(this).is(':checked')){
+            banner.addClass('grid');
+        }else{
+            banner.removeClass('grid');
+        }
+    });
+
+
     $(".dimensions input").on('keyup',function(){
         banner.height($("#height").val());
         banner.width($("#width").val());

@@ -17,3 +17,8 @@ label.section-header{font-size:20px;}
 
 #banner{width:200px; height:200px; background-color:red;}
 
+.grid{
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 70px,#CCC 70px,#CCC 71px),repeating-linear-gradient(-90deg,transparent,transparent 70px,#CCC 70px,#CCC 71px);
+    background-size: 71px 71px;
+}
+
