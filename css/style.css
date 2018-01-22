@@ -9,5 +9,7 @@
 
 .controls .control{margin-bottom:20px;}
 
+.dragger{width: fit-content; cursor: pointer;}
+
 #banner{width:200px; height:200px; background-color:red;}
 

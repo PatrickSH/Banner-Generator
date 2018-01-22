@@ -18,15 +18,22 @@ $(document).ready(function(){
         switch($("#txt_type").val()){
             case "p":
                 banner.append("<p class='dragger draggable ui-widget-content'>"+$("#txt").val()+"</p>");
+                $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h1":
                 banner.append("<h1 class='dragger draggable ui-widget-content'>"+$("#txt").val()+"</h1>");
+                $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h2":
                 banner.append("<h2 class='dragger draggable ui-widget-content'>"+$("#txt").val()+"</h2>");
+                $('.draggable').draggable({containment:"#banner"});
                 break;
         }
+        $("#txt").val("");
     });
 
-    $( ".dragger" ).draggable({ containment: "#banner", scroll: false });
+    $("#banner").children().each(function(){
+        $(this).draggable();
+    });
+ 
 });
