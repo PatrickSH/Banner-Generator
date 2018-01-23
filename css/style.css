@@ -6,8 +6,9 @@
 
 /****Controls****/
 textarea, input, select, button{display: block; margin-bottom:5px;}
-.controller{width:1024px;margin:0 auto;}
+.controller{width:1024px;margin:0 auto; display: flex;}
 .controls{width:400px;}
+.banner-elements{width:400px;}
 label.section-header{font-size:20px;}
 .controls label{display: block; margin-bottom:5px;}
 
