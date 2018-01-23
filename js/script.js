@@ -5,9 +5,9 @@ $(document).ready(function(){
     /****Settings */
     $("#show-grid-lines").on('click',function(){
         if($(this).is(':checked')){
-            banner.addClass('grid');
+            banner.append('<div class="grid"></div>');
         }else{
-            banner.removeClass('grid');
+            $("#banner .grid").remove();
         }
     });
 
@@ -43,7 +43,9 @@ $(document).ready(function(){
     });
 
     $("#banner").children().each(function(){
-        $(this).draggable();
+        if(!$(this).hasClass('grid')){
+            $(this).draggable();
+        }
     });
  
 });
