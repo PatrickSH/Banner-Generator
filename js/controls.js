@@ -59,15 +59,15 @@ $(document).ready(function(){
     $("#add_text").on('click',function(){
         switch($("#txt_type").val()){
             case "p":
-                banner.append("<p class='dragger draggable ui-widget-content banner-element' data-type='Header paragrah' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
+                banner.append("<p class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header paragrah' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h1":
-                banner.append("<h1 class='dragger draggable ui-widget-content banner-element' data-type='Header 1' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
+                banner.append("<h1 class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header 1' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h2":
-                banner.append("<h2 class='dragger draggable ui-widget-content banner-element' data-type='Header 2' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
+                banner.append("<h2 class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header 2' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
         }
@@ -110,5 +110,9 @@ $(document).ready(function(){
             "border" : $("#banner_border_width").val()+"px solid "+$(this).val(),
         });
     });
+
+    $("#txt_style").on('change',function(){
+        banner.css('text-decoration',$(this).val());
+    }); 
  
 });

@@ -30,3 +30,5 @@ label.section-header{font-size:20px;}
     position: absolute;
 }
 .dragger{position: absolute !important; z-index: 10;}
+
+.banner-text-element{text-decoration: inherit;}
