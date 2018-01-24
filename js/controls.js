@@ -83,5 +83,23 @@ $(document).ready(function(){
             $(this).draggable();
         }
     });
+
+    /**
+     * Adds CSS font link
+     */
+    $("#font_css_link").on('keyup',function(){
+        if(!isAssetLoaded($(this).val(), 'link', 'href') && $(this).val() != ""){
+            $("head").prepend("<link href='"+$(this).val()+"' rel='stylesheet'>");
+        }
+    });
+
+    /**
+    * Adds CSS font link
+    */
+    $("#font_css_family").on('keyup',function(){
+        if($(this).val() != ""){
+            banner.css('font-family',$(this).val());
+        }
+    });
  
 });
