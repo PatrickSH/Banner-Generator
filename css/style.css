@@ -19,8 +19,9 @@ label.section-header{font-size:20px;}
 
 .dragger{width: fit-content; cursor: pointer;}
 
-#banner{width:200px; height:200px; background-color:red;}
+#banner{width:200px; height:200px; background-color:red; box-sizing: border-box;}
 /******Banner*****/
+
 .grid{
     background-image: repeating-linear-gradient(0deg,transparent,transparent 70px,#CCC 70px,#CCC 71px),repeating-linear-gradient(-90deg,transparent,transparent 70px,#CCC 70px,#CCC 71px);
     background-size: 71px 71px;

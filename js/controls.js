@@ -94,12 +94,21 @@ $(document).ready(function(){
     });
 
     /**
-    * Adds CSS font link
+    * Adds CSS font family
     */
     $("#font_css_family").on('keyup',function(){
         if($(this).val() != ""){
             banner.css('font-family',$(this).val());
         }
+    });
+
+    /**
+     * Set banner border
+     */
+    $("#banner_border_color").on('change',function(){
+        banner.css({
+            "border" : $("#banner_border_width").val()+"px solid "+$(this).val(),
+        });
     });
  
 });
