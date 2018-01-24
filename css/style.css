@@ -9,6 +9,9 @@ textarea, input, select, button{display: block; margin-bottom:5px;}
 .controller{width:1024px;margin:0 auto; display: flex;}
 .controls{width:400px;}
 .banner-elements{width:400px;}
+.banner-element-holder{height:200px; width:100%; overflow-y: scroll;}
+.banner-element-holder p{cursor: pointer; text-decoration: underline;}
+.active-banner-element{text-decoration: underline; color:#00FF00;}
 label.section-header{font-size:20px;}
 .controls label{display: block; margin-bottom:5px;}
 

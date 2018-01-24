@@ -2,6 +2,9 @@ $(document).ready(function(){
 
     var banner = $("#banner");
 
+    /**
+     * Makes as new unique element Id
+     */
     function elementId()
     {
         var highestId = 0;
@@ -12,7 +15,9 @@ $(document).ready(function(){
         return nextId;
     }
 
-    /****Settings */
+    /**
+     * Toggles gridlines
+     */
     $("#show-grid-lines").on('click',function(){
         if($(this).is(':checked')){
             banner.append('<div class="grid"></div>');
@@ -21,12 +26,26 @@ $(document).ready(function(){
         }
     });
 
+    /**
+     * Toggles active element on banner
+     */
+    $(document).on('click','.banner-element-holder p',function(){
+        var elementUid = $(this).attr('data-element-id');
+        $("#banner").children().removeClass('active-banner-element');
+        $("#banner [data-element-id='"+elementUid+"']").addClass('active-banner-element');
+    });
 
+    /**
+     * Sets height and width of banner
+     */
     $(".dimensions input").on('keyup',function(){
         banner.height($("#height").val());
         banner.width($("#width").val());
     });
 
+    /**
+     * Set background color and color of texts
+     */
     $("#bg_color, #txt_color").on('change',function(){
         banner.css({
             "background-color" : $("#bg_color").val(),
@@ -34,25 +53,31 @@ $(document).ready(function(){
         });
     });
 
+    /**
+     * Adds texts
+     */
     $("#add_text").on('click',function(){
         switch($("#txt_type").val()){
             case "p":
-                banner.append("<p class='dragger draggable ui-widget-content banner-element' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
+                banner.append("<p class='dragger draggable ui-widget-content banner-element' data-type='Header paragrah' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h1":
-                banner.append("<h1 class='dragger draggable ui-widget-content banner-element' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
+                banner.append("<h1 class='dragger draggable ui-widget-content banner-element' data-type='Header 1' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h2":
-                banner.append("<h2 class='dragger draggable ui-widget-content banner-element' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
+                banner.append("<h2 class='dragger draggable ui-widget-content banner-element' data-type='Header 2' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
         }
         $("#txt").val("");
-       
+        refreshElementList();
     });
 
+    /**
+     * Makes sure we have draggable class
+     */
     $("#banner").children().each(function(){
         if(!$(this).hasClass('grid')){
             $(this).draggable();
