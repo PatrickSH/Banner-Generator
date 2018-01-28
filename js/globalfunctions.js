@@ -5,9 +5,12 @@
 function refreshElementList()
 {
     $(".banner-element-holder").empty();
+    var html = '<ul class="list-group">';
     $(".banner-element").each(function(){
-        $(".banner-element-holder").append("<p data-element-id='"+$(this).attr('data-element-id')+"'>"+$(this).attr('data-type')+" - "+$(this).attr('data-element-id')+"</p>");
+        html += "<li class='list-group-item' data-element-id='"+$(this).attr('data-element-id')+"' >"+$(this).attr('data-type')+" - "+$(this).attr('data-element-id')+"</li>";
     });
+    html +='</ul>';
+    $(".banner-element-holder").append(html);
 }
 
 /**

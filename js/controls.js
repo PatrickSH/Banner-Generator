@@ -29,8 +29,10 @@ $(document).ready(function(){
     /**
      * Toggles active element on banner
      */
-    $(document).on('click','.banner-element-holder p',function(){
+    $(document).on('click','.banner-element-holder li',function(){
         var elementUid = $(this).attr('data-element-id');
+        $(".banner-element-holder li").removeClass('active-in-element-list');
+        $(this).addClass('active-in-element-list');
         $("#banner").children().removeClass('active-banner-element');
         $("#banner [data-element-id='"+elementUid+"']").addClass('active-banner-element');
     });
@@ -111,6 +113,9 @@ $(document).ready(function(){
         });
     });
 
+    /**
+     * Add text decoration
+     */
     $("#txt_style").on('change',function(){
         banner.css('text-decoration',$(this).val());
     }); 
