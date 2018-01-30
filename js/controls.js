@@ -1,19 +1,9 @@
+Dropzone.autoDiscover = false;
 $(document).ready(function(){
-
     var banner = $("#banner");
 
-    /**
-     * Makes as new unique element Id
-     */
-    function elementId()
-    {
-        var highestId = 0;
-        $(".banner-element").each(function(){
-            highestId = parseInt($(this).attr('data-element-id'));
-        });
-        var nextId = highestId + 1;
-        return nextId;
-    }
+
+    //function add
 
     /**
      * Toggles gridlines
@@ -61,15 +51,15 @@ $(document).ready(function(){
     $("#add_text").on('click',function(){
         switch($("#txt_type").val()){
             case "p":
-                banner.append("<p class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header paragrah' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
+                banner.append("<p class='banner-text-element "+standardClasses+"' data-type='Header paragrah' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h1":
-                banner.append("<h1 class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header 1' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
+                banner.append("<h1 class='banner-text-element "+standardClasses+"' data-type='Header 1' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h2":
-                banner.append("<h2 class='dragger draggable ui-widget-content banner-element banner-text-element' data-type='Header 2' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
+                banner.append("<h2 class='banner-text-element "+standardClasses+"' data-type='Header 2' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
         }
@@ -118,6 +108,28 @@ $(document).ready(function(){
      */
     $("#txt_style").on('change',function(){
         banner.css('text-decoration',$(this).val());
-    }); 
- 
+    });
+    var dropObj = {
+        url: $("#file-upload").attr('action'),
+        acceptedFiles: "image/jpeg,image/png,image/gif,video/mp4,audio/mpeg",
+        init: function () {
+            this.on("complete", function (file) {
+                var path = file.xhr.response;
+                var fileType = file.type.split('/')[0];
+                switch(fileType){
+                    case "image":
+                        banner.append("<img class='banner-image-element "+standardClasses+"' style='max-width: "+banner.width()+"px;' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
+                        $('.draggable').draggable({containment:"#banner"});
+                        break;
+                    case "video":
+                        break;
+                    case "audio":
+                        break;
+                }
+            });
+        }
+    };
+    var myDropzone = new Dropzone("#file-upload", dropObj);
+    console.log(myDropzone);
+
 });

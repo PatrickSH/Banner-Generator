@@ -1,3 +1,4 @@
+var standardClasses = "dragger draggable ui-widget-content banner-element";
 
 /**
  * Refreshes our current element list
@@ -11,6 +12,19 @@ function refreshElementList()
     });
     html +='</ul>';
     $(".banner-element-holder").append(html);
+}
+
+/**
+ * Makes as new unique element Id
+ */
+function elementId()
+{
+    var highestId = 0;
+    $(".banner-element").each(function(){
+        highestId = parseInt($(this).attr('data-element-id'));
+    });
+    var nextId = highestId + 1;
+    return nextId;
 }
 
 /**
