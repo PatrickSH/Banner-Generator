@@ -118,7 +118,7 @@ $(document).ready(function(){
                 var fileType = file.type.split('/')[0];
                 switch(fileType){
                     case "image":
-                        banner.append("<img class='banner-image-element "+standardClasses+"' style='max-width: "+banner.width()+"px;' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
+                        banner.append("<img class='banner-image-element "+standardClasses+"' style='max-width: "+banner.width() / 2+"px;' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
                         $('.draggable').draggable({containment:"#banner"});
                         break;
                     case "video":
@@ -126,10 +126,10 @@ $(document).ready(function(){
                     case "audio":
                         break;
                 }
+                refreshElementList();
             });
         }
     };
     var myDropzone = new Dropzone("#file-upload", dropObj);
-    console.log(myDropzone);
 
 });
