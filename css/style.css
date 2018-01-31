@@ -9,11 +9,19 @@
 /****Controls****/
 textarea, input, select, button{display: block; margin-bottom:5px;}
 
-.controller{width:1024px;margin:0 auto; display: flex;}
+.controller{width:1200px;margin:0 auto; display: flex;}
 
-.controls{width:400px;}
+.controls{flex:1;}
 
-.banner-elements{width:400px;}
+.banner-edit-element{flex:1;}
+.columnHeader{
+    flex-grow: 1;
+    height:80px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.banner-elements{flex:1; padding-left: 30px;}
 
 .banner-element-holder{height:200px; width:100%; overflow-y: scroll;}
 
@@ -28,6 +36,8 @@ label.section-header{font-size:20px;}
 .controls .control{margin-bottom:20px;}
 
 .dragger{width: fit-content; cursor: pointer;}
+
+.list-group{margin-top:97px;}
 
 .list-group-item{cursor: pointer;}
 
