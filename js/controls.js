@@ -96,6 +96,10 @@ $(document).ready(function(){
         getActiveElement().css('transform', 'rotate('+$(this).val()+'deg)');
     });
 
+    $("#image_width").on('keyup',function(){
+        getActiveElement().css('max-width', $(this).val()+"px");
+    });
+
     /**
      * Add text decoration
      */
