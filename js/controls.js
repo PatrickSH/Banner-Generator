@@ -92,6 +92,10 @@ $(document).ready(function(){
         });
     });
 
+    $("#image_rotation").on('keyup',function(){
+        getActiveElement().css('transform', 'rotate('+$(this).val()+'deg)');
+    });
+
     /**
      * Add text decoration
      */

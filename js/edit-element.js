@@ -37,6 +37,10 @@ $(document).ready(function() {
         'text'
     ]));
 
+    $(".image_rotation_holder").attr('data-relevant-for',JSON.stringify([
+        'image'
+    ]));
+
 
     /**Edit actions****/
 

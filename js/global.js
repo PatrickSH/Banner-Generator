@@ -27,6 +27,11 @@ function elementId()
     return nextId;
 }
 
+function getActiveElement()
+{
+    return $(".active-banner-element");
+}
+
 /**
  * Checks if a given assest is loaded
  */
