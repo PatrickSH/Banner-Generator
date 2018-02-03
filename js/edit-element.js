@@ -41,12 +41,17 @@ $(document).ready(function() {
         'image'
     ]));
 
-    $(".image_width").attr('data-relevant-for',JSON.stringify([
+    $(".image_width_holder").attr('data-relevant-for',JSON.stringify([
         'image'
     ]));
 
-    $(".image_greyscale").attr('data-relevant-for',JSON.stringify([
+    $(".image_greyscale_holder").attr('data-relevant-for',JSON.stringify([
         'image'
+    ]));
+
+    $(".image_greyscale_holder").attr('data-relevant-for',JSON.stringify([
+        'text','image',
+        'video'
     ]));
 
     /**Edit actions****/

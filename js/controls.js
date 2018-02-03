@@ -101,10 +101,13 @@ $(document).ready(function(){
     });
 
     $("#image_greyscale").on('keyup',function(){
-        console.log("he");
         getActiveElement().css({
             "filter" : "greyscale("+$(this).val()+"%)"
         });
+    });
+
+    $("#element_opacity").on('keyup',function(){
+        getActiveElement().css('opacity','0.'+$(this).val());
     });
 
     /**
