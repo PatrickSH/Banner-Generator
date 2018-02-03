@@ -6,6 +6,7 @@
     <script src="js/dropzone.js"></script>
     <script src="js/global.js"></script>
     <script src="js/controls.js"></script>
+    <script src="js/edit-element.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -120,22 +121,22 @@
         </div>
         <div class="banner-edit-element">
             <div class="columnHeader">Edit element</div>
-            <div id="accordion">
+            <div id="accordionEdit">
                 <div class="texts control card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header" id="headingOneEdit">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOneEdit" aria-expanded="true" aria-controls="collapseOneEdit">
                                 Content
                             </button>
                         </h5>
                     </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOneEdit" class="collapse" aria-labelledby="headingOneEdit" data-parent="#accordion">
                         <div class="card-body">
-                            <div class="form-group">
+                            <div class="form-group txt_holder">
                                 <label for="txt">Text</label>
                                 <textarea name="txt" class="form-control" id="txt" placeholder="Text"></textarea>
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3 txt_type_holder">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="txt_type">Text type</label>
                                 </div>
@@ -149,64 +150,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="dimensions control card">
-                    <div class="card-header" id="dimensionsAccordH">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#dimensionsAccord" aria-expanded="true" aria-controls="collapseOne">
-                                Dimensions
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="dimensionsAccord" class="collapse" aria-labelledby="dimensionsAccordH" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="">Height X Width</span>
-                                </div>
-                                <input type="number" class="form-control" name="height" id="height" value="200" placeholder="Height"/>
-                                <input type="number" class="form-control" name="width" id="width" value="200" placeholder="Width"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="graphics control card">
-                    <div class="card-header" id="graphicsAccordH">
+                    <div class="card-header" id="graphicsAccordHEdit">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#graphicsAccord" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#graphicsAccordEdit" aria-expanded="true" aria-controls="collapseOneEdit">
                                 Graphics
                             </button>
                         </h5>
                     </div>
-                    <div id="graphicsAccord" class="collapse" aria-labelledby="graphicsAccordH" data-parent="#accordion">
+                    <div id="graphicsAccordEdit" class="collapse" aria-labelledby="graphicsAccordHEdit" data-parent="#accordionEdit">
                         <div class="card-body">
-                            <label>Background color</label>
-                            <input type="color" name="bg_color" id="bg_color" placeholder="Background color"/>
-                            <label>Image</label>
-                            <form method="post" action="http://api.danban.dev.cc/file/store?file_type_id=1&user_id=1&is_in_use=1"
-                                  class="dropzone"
-                                  id="file-upload" enctype="multipart/form-data"></form>
+                            <div class="bg_color_holder">
+                                <label>Background color</label>
+                                <input type="color" name="bg_color" id="bg_color" placeholder="Background color"/>
+                            </div>
+                            <div class="file-upload_holder">
+                                <label>Image</label>
+                                <form method="post" action="http://api.danban.dev.cc/file/store?file_type_id=1&user_id=1&is_in_use=1"
+                                      class="dropzone"
+                                      id="file-upload" enctype="multipart/form-data"></form>
+                            </div>
                             <div class="clear"></div>
-                            <label>Text color</label>
-                            <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
-                            <label>Text style</label>
-                            <select name="txt_style" id="txt_style">
-                                <option value="blink">Blink</option>
-                                <option value="dashed">Dashed</option>
-                                <option value="dotted">Dotted</option>
-                                <option value="double">Double</option>
-                                <option value="line-through">Line-through</option>
-                                <option value="overline">Overline</option>
-                                <option value="underline">Underline</option>
-                                <option value="wavy">Wavy</option>
-                            </select>
-                            <label>Font CSS link</label>
-                            <input type="text" name="font_css_link" id="font_css_link" placeholder="Font CSS link"/>
-                            <label>Font CSS Family</label>
-                            <input type="text" name="font_css_family" id="font_css_family" placeholder="Font CSS link"/>
-                            <label>Banner border width(PX)</label>
-                            <input type="number" name="banner_border_width" id="banner_border_width" placeholder="Banner border width(PX)"/>
-                            <label>Banner border color</label>
-                            <input type="color" name="banner_border_width" id="banner_border_color" placeholder="Banner border color"/>
+                            <div class="txt_color_holder">
+                                <label>Text color</label>
+                                <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
+                            </div>
+                            <div class="txt_style_holder">
+                                <label>Text style</label>
+                                <select name="txt_style" id="txt_style">
+                                    <option value="blink">Blink</option>
+                                    <option value="dashed">Dashed</option>
+                                    <option value="dotted">Dotted</option>
+                                    <option value="double">Double</option>
+                                    <option value="line-through">Line-through</option>
+                                    <option value="overline">Overline</option>
+                                    <option value="underline">Underline</option>
+                                    <option value="wavy">Wavy</option>
+                                </select>
+                            </div>
+                            <div class="font_css_link_holder">
+                                <label>Font CSS link</label>
+                                <input type="text" name="font_css_link" id="font_css_link" placeholder="Font CSS link"/>
+                            </div>
+                            <div class="font_css_family_holder">
+                                <label>Font CSS Family</label>
+                                <input type="text" name="font_css_family" id="font_css_family" placeholder="Font CSS link"/>
+                            </div>
+                            <div class="banner_border_width_holder">
+                                <label>Banner border width(PX)</label>
+                                <input type="number" name="banner_border_width" id="banner_border_width" placeholder="Banner border width(PX)"/>
+                            </div>
+                            <div class="banner_border_color_holder">
+                                <label>Banner border color</label>
+                                <input type="color" name="banner_border_width" id="banner_border_color" placeholder="Banner border color"/>
+                            </div>
                         </div>
                     </div>
                 </div>
