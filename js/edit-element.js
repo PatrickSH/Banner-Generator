@@ -45,6 +45,9 @@ $(document).ready(function() {
         'image'
     ]));
 
+    $(".image_greyscale").attr('data-relevant-for',JSON.stringify([
+        'image'
+    ]));
 
     /**Edit actions****/
 

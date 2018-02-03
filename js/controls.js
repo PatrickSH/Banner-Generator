@@ -100,6 +100,13 @@ $(document).ready(function(){
         getActiveElement().css('max-width', $(this).val()+"px");
     });
 
+    $("#image_greyscale").on('keyup',function(){
+        console.log("he");
+        getActiveElement().css({
+            "filter" : "greyscale("+$(this).val()+"%)"
+        });
+    });
+
     /**
      * Add text decoration
      */
