@@ -20,8 +20,7 @@ $(document).ready(function(){
      * Sets height and width of banner
      */
     $(".dimensions input").on('keyup',function(){
-        banner.height($("#height").val());
-        banner.width($("#width").val());
+        addCSSRule("#banner", "height:"+$("#height").val()+"px; width:"+$("#width").val()+"px;");
     });
 
     /**
