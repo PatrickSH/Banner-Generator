@@ -1,3 +1,18 @@
+/**
+ * Makes a random class for element
+ * @returns {string}
+ */
+function uniqueId()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text+""+Math.floor(Math.random() * 10000000)+""+Math.round(+new Date()/1000);
+}
+
 var standardClasses = "dragger draggable ui-widget-content banner-element";
 
 /**
@@ -30,6 +45,11 @@ function elementId()
 function getActiveElement()
 {
     return $(".active-banner-element");
+}
+
+function getActiveElementId()
+{
+    return "#"+getActiveElement().attr('id');
 }
 
 /**
