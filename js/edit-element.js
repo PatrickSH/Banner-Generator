@@ -87,6 +87,7 @@ $(document).ready(function() {
     $(document).on('click','.banner-element-holder li',function(){
         var elementUid = $(this).attr('data-element-id');
         var relevans = $("#banner [data-element-id="+elementUid+"]").attr('data-relevans');
+        $("#graphicsAccordEdit input, #graphicsAccordEdit select").val("");
         if($(this).hasClass('active-in-element-list')){ //We pressed active element
             $(".banner-element-holder li").removeClass('active-in-element-list');
             $("#banner").children().removeClass('active-banner-element');
