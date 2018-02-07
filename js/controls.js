@@ -118,7 +118,7 @@ $(document).ready(function(){
      * Add text decoration
      */
     $("#txt_style").on('change',function(){
-        //banner.css('text-decoration',$(this).val());
+        console.log($(this).val());
         changeStylesheetRule(s,getActiveElementId(), "text-decoration", $(this).val());
     });
     var dropObj = {

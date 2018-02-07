@@ -5,12 +5,12 @@
 function uniqueId()
 {
     var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    for (var i = 0; i < 10; i++)
+    for (var i = 0; i < 5; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text+""+Math.floor(Math.random() * 10000000)+""+Math.round(+new Date()/1000);
+    text = text.toLowerCase();
+    return text+""+Math.floor(Math.random() * 10000000)+""+Math.round(+new Date()/1000)+""+text;
 }
 
 var standardClasses = "dragger draggable ui-widget-content banner-element";
