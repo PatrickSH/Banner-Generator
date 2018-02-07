@@ -86,7 +86,7 @@ $(document).ready(function(){
         changeStylesheetRule(s,"#banner", "border", $("#banner_border_width").val()+"px solid "+$(this).val());
     });
 
-    $("#image_rotation").on('keyup',function(){
+    $("#rotation").on('keyup',function(){
         changeStylesheetRule(s,getActiveElementId(), "transform", 'rotate('+$(this).val()+'deg)');
         //getActiveElement().css('transform', 'rotate('+$(this).val()+'deg)');
     });
