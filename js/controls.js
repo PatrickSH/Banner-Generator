@@ -104,6 +104,10 @@ $(document).ready(function(){
         changeStylesheetRule(s,getActiveElementId(), "filter", "greyscale("+$(this).val()+"%)");
     });
 
+    $("#blur").on('keyup',function(){
+        changeStylesheetRule(s,getActiveElementId(), "filter", "blur("+$(this).val()+"px)");
+    });
+
     $("#element_opacity").on('keyup',function(){
         if($(this).val() == ""){
             //getActiveElement().css('opacity','1');

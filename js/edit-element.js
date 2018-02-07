@@ -54,6 +54,10 @@ $(document).ready(function() {
         'video'
     ]));
 
+
+    $(".blur_holder").attr('data-relevant-for',JSON.stringify([
+        'text'
+    ]));
     /**Edit actions****/
 
     function showAllEditingFields()
