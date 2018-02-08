@@ -75,7 +75,7 @@ $(document).ready(function(){
     */
     $("#font_css_family").on('keyup',function(){
         if($(this).val() != ""){
-            banner.css('font-family',$(this).val());
+            changeStylesheetRule(s,"#banner", "font-family", $(this).val());
         }
     });
 
@@ -86,34 +86,41 @@ $(document).ready(function(){
         changeStylesheetRule(s,"#banner", "border", $("#banner_border_width").val()+"px solid "+$(this).val());
     });
 
+    /**
+     * Rotation of element option
+     */
     $("#rotation").on('keyup',function(){
         changeStylesheetRule(s,getActiveElementId(), "transform", 'rotate('+$(this).val()+'deg)');
-        //getActiveElement().css('transform', 'rotate('+$(this).val()+'deg)');
     });
 
+    /**
+     * Setting width of element option
+     */
     $("#image_width").on('keyup',function(){
-        //getActiveElement().css('max-width', $(this).val()+"px");
         changeStylesheetRule(s,getActiveElementId(), "max-width", $(this).val()+"px");
     });
 
+    /**
+     * Seeting greyscale on element option
+     */
     $("#image_greyscale").on('keyup',function(){
-        /*getActiveElement().css({
-            "filter" : "greyscale("+$(this).val()+"%)"
-        });*/
-
         changeStylesheetRule(s,getActiveElementId(), "filter", "greyscale("+$(this).val()+"%)");
     });
 
+    /**
+     * Setting blur on element
+     */
     $("#blur").on('keyup',function(){
         changeStylesheetRule(s,getActiveElementId(), "filter", "blur("+$(this).val()+"px)");
     });
 
+    /**
+     * Setting element opacity
+     */
     $("#element_opacity").on('keyup',function(){
         if($(this).val() == ""){
-            //getActiveElement().css('opacity','1');
             changeStylesheetRule(s,getActiveElementId(), "opacity", "1");
         }else{
-            //getActiveElement().css('opacity','0.'+$(this).val());
             changeStylesheetRule(s,getActiveElementId(), "opacity", '0.'+$(this).val());
         }
     });
