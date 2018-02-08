@@ -73,6 +73,8 @@ label.section-header{font-size:20px;}
     margin-bottom: 20px;
     position: relative;
 }
+
+.banner-image-element{max-width:100px;}
 .dragger{position: absolute !important; z-index: 10;}
 
 .banner-text-element{text-decoration: inherit;}

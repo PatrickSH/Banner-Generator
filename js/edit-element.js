@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    var s = document.styleSheets[0];
     //Set relavant for
     $(".texts").attr('data-relevant-for',JSON.stringify([
         'text'
@@ -80,6 +80,92 @@ $(document).ready(function() {
         });
     }
 
+    function addCurrentElementData(key,value)
+    {
+        if(getActiveElement().attr("data-element-data") && getActiveElement().attr("data-element-data") != ""){
+            var currentData = JSON.parse(getActiveElement().attr("data-element-data"));
+            for(var i = 0; i < currentData.length; i++)
+            {
+                if(currentData[i][key]){
+                    currentData.splice(i,1);
+                }
+            }
+        }else{
+            var currentData = [];
+        }
+        var obj = {};
+        obj[key] = value;
+
+        currentData.push(obj);
+        currentData = JSON.stringify(currentData);
+
+        getActiveElement().attr("data-element-data",currentData);
+    }
+
+    function getCurrentElementData()
+    {
+        if(getActiveElement().attr("data-element-data") && getActiveElement().attr("data-element-data") != ""){
+            var data = JSON.parse(getActiveElement().attr("data-element-data"));
+            for(var i = 0; i < data.length; i++)
+            {
+                for(var k in data[i])
+                {
+                    $("#"+k).val(data[i][k]);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Rotation of element option
+     */
+    $("#rotation").on('keyup',function(){
+        changeStylesheetRule(s,getActiveElementId(), "transform", 'rotate('+$(this).val()+'deg)');
+        addCurrentElementData("rotation",$(this).val());
+    });
+
+    /**
+     * Setting width of element option
+     */
+    $("#image_width").on('keyup',function(){
+        changeStylesheetRule(s,getActiveElementId(), "max-width", $(this).val()+"px");
+        addCurrentElementData("image_width",$(this).val());
+    });
+
+    /**
+     * Seeting greyscale on element option
+     */
+    $("#image_greyscale").on('keyup',function(){
+        changeStylesheetRule(s,getActiveElementId(), "filter", "grayscale("+$(this).val()+"%)");
+        addCurrentElementData("image_greyscale",$(this).val());
+    });
+
+    /**
+     * Setting blur on element
+     */
+    $("#blur").on('keyup',function(){
+        changeStylesheetRule(s,getActiveElementId(), "filter", "blur("+$(this).val()+"px)");
+        addCurrentElementData("blur",$(this).val());
+    });
+
+    /**
+     * Setting element opacity
+     */
+    $("#element_opacity").on('keyup',function(){
+        if($(this).val() == ""){
+            changeStylesheetRule(s,getActiveElementId(), "opacity", "1");
+        }else{
+            changeStylesheetRule(s,getActiveElementId(), "opacity", '0.'+$(this).val());
+            addCurrentElementData("element_opacity",$(this).val());
+        }
+    });
+
+    $("#txt_style").on('change',function(){
+        changeStylesheetRule(s,getActiveElementId(), "text-decoration", $(this).val());
+        addCurrentElementData("txt_style",$(this).val());
+    });
+
 
     /**
      * Toggles active element on banner
@@ -100,5 +186,6 @@ $(document).ready(function() {
 
             determineEditingFieldsToShow(relevans);
         }
+        getCurrentElementData();
     });
 });

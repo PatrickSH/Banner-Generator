@@ -87,45 +87,6 @@ $(document).ready(function(){
     });
 
     /**
-     * Rotation of element option
-     */
-    $("#rotation").on('keyup',function(){
-        changeStylesheetRule(s,getActiveElementId(), "transform", 'rotate('+$(this).val()+'deg)');
-    });
-
-    /**
-     * Setting width of element option
-     */
-    $("#image_width").on('keyup',function(){
-        changeStylesheetRule(s,getActiveElementId(), "max-width", $(this).val()+"px");
-    });
-
-    /**
-     * Seeting greyscale on element option
-     */
-    $("#image_greyscale").on('keyup',function(){
-        changeStylesheetRule(s,getActiveElementId(), "filter", "greyscale("+$(this).val()+"%)");
-    });
-
-    /**
-     * Setting blur on element
-     */
-    $("#blur").on('keyup',function(){
-        changeStylesheetRule(s,getActiveElementId(), "filter", "blur("+$(this).val()+"px)");
-    });
-
-    /**
-     * Setting element opacity
-     */
-    $("#element_opacity").on('keyup',function(){
-        if($(this).val() == ""){
-            changeStylesheetRule(s,getActiveElementId(), "opacity", "1");
-        }else{
-            changeStylesheetRule(s,getActiveElementId(), "opacity", '0.'+$(this).val());
-        }
-    });
-
-    /**
      * Add text decoration
      */
     $("#txt_style").on('change',function(){
@@ -141,7 +102,7 @@ $(document).ready(function(){
                 var fileType = file.type.split('/')[0];
                 switch(fileType){
                     case "image":
-                        banner.append("<img id='"+uniqueId()+"' class='banner-image-element "+standardClasses+"' style='max-width: "+banner.width() / 2.5+"px;' data-relevans='image' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
+                        banner.append("<img id='"+uniqueId()+"' class='banner-image-element "+standardClasses+"' data-relevans='image' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
                         $('.draggable').draggable({containment:"#banner"});
                         break;
                     case "video":
