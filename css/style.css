@@ -52,6 +52,30 @@ label.section-header{font-size:20px;}
 .dz-progress,.dz-filename,.dz-error-message,.dz-error-mark,.dz-success-mark{display: none;}
 
 .banner-elements .active-in-element-list{border: 1px solid #0056b3;}
+
+.animationBox{
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s;
+    border:1px solid #007bff;
+    cursor:pointer;
+}
+
+.animationBox:hover{
+    background-color: #fff;
+    color:#007bff;
+    border:1px solid #007bff;
+}
+
+.animationsHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 /******Banner*****/
 
 .grid{

@@ -14,6 +14,11 @@ $(document).ready(function() {
         'text'
     ]));
 
+    $(".animation").attr('data-relevant-for',JSON.stringify([
+        'text','video',
+        'image'
+    ]));
+
     $(".bg_color_holder").attr('data-relevant-for',JSON.stringify([
     ]));
 
@@ -164,6 +169,11 @@ $(document).ready(function() {
     $("#txt_style").on('change',function(){
         changeStylesheetRule(s,getActiveElementId(), "text-decoration", $(this).val());
         addCurrentElementData("txt_style",$(this).val());
+    });
+
+    $(document).on('click','.animationBox',function(){
+       var animationName = $(this).attr('data-animation-name');
+
     });
 
 
