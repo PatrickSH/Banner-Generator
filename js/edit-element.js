@@ -154,6 +154,11 @@ $(document).ready(function() {
         addCurrentElementData("blur",$(this).val());
     });
 
+    $(document).on('change',".slide_in_right_opacity_from",function(){
+        console.log($(this).val());
+       $(".slide_in_right_opacity_from option[value='"+$(this).val()+"']").prop('selected',true);
+    });
+
     /**
      * Setting element opacity
      */
@@ -173,7 +178,13 @@ $(document).ready(function() {
 
     $(document).on('click','.animationBox',function(){
        var animationName = $(this).attr('data-animation-name');
-
+       if($(this).hasClass('activeAnimation')){
+            $(this).removeClass('activeAnimation')
+       }else{
+           $(this).addClass('activeAnimation');
+       }
+       $(".current_animation_settings").empty();
+       $(".current_animation_settings").append($(".animation_setting[data-animation-name="+animationName+"]").html());
     });
 
 

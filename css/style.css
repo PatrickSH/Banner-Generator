@@ -63,13 +63,15 @@ label.section-header{font-size:20px;}
     cursor:pointer;
 }
 
-.animationBox:hover{
+#animationAccordEdit .allAnimationSettings{display: none !important;}
+
+.animationBox:hover,.activeAnimation{
     background-color: #fff;
     color:#007bff;
     border:1px solid #007bff;
 }
 
-.animationsHolder{
+.animationsHolder,.current_animation_settings,.animation_setting{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
