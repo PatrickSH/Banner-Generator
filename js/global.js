@@ -44,7 +44,7 @@ function elementId()
 
 function getActiveElement()
 {
-    return $(".active-banner-element");
+    return $("body .active-banner-element");
 }
 
 function getActiveElementId()
@@ -62,4 +62,63 @@ function isAssetLoaded(url, tagName, prop)
         if (assets[i][prop] == url) return true;
     }
     return false;
+}
+
+
+/**
+ * Saves data on element in json element based on key / value
+ * @param key
+ * @param value
+ */
+function addCurrentElementData(key,value,dataAttrName)
+{
+    if(dataAttrName === undefined){ //If is undefined we use default which is element-data
+        dataAttrName = "element-data";
+    }
+
+    if(getActiveElement().attr("data-"+dataAttrName) && getActiveElement().attr("data-"+dataAttrName) != ""){
+        var currentData = JSON.parse(getActiveElement().attr("data-"+dataAttrName));
+        for(var i = 0; i < currentData.length; i++)
+        {
+            if(currentData[i][key]){
+                currentData.splice(i,1);
+            }
+        }
+    }else{
+        var currentData = [];
+    }
+    var obj = {};
+    obj[key] = value;
+
+    currentData.push(obj);
+    currentData = JSON.stringify(currentData);
+
+    getActiveElement().attr("data-"+dataAttrName,currentData);
+}
+
+/**
+ * Gets all data for current element
+ */
+function getCurrentElementData(dataAttrName)
+{
+    if(dataAttrName === undefined){ //If is undefined we use default which is element-data
+        dataAttrName = "element-data";
+    }
+
+    if(getActiveElement().attr("data-"+dataAttrName) && getActiveElement().attr("data-"+dataAttrName) != ""){
+        var data = JSON.parse(getActiveElement().attr("data-"+dataAttrName));
+        for(var i = 0; i < data.length; i++)
+        {
+            for(var k in data[i])
+            {
+            console.log(k,data[i][k]);
+                $("#"+k).val(data[i][k]);
+            }
+        }
+    }
+}
+
+function clearAllFields()
+{
+    $(".banner-edit-element input, .banner-edit-element select").val("");
 }

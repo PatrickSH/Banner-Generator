@@ -70,6 +70,10 @@ $(document).ready(function() {
         $(".banner-edit-element div").show(); //Show all our editing options from the start
     }
 
+    /**
+     * Determine editing fields to show based on JSON relevans on object
+     * @param relevans : what relevans we will look for
+     */
     function determineEditingFieldsToShow(relevans)
     {
         showAllEditingFields();
@@ -84,43 +88,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    function addCurrentElementData(key,value)
-    {
-        if(getActiveElement().attr("data-element-data") && getActiveElement().attr("data-element-data") != ""){
-            var currentData = JSON.parse(getActiveElement().attr("data-element-data"));
-            for(var i = 0; i < currentData.length; i++)
-            {
-                if(currentData[i][key]){
-                    currentData.splice(i,1);
-                }
-            }
-        }else{
-            var currentData = [];
-        }
-        var obj = {};
-        obj[key] = value;
-
-        currentData.push(obj);
-        currentData = JSON.stringify(currentData);
-
-        getActiveElement().attr("data-element-data",currentData);
-    }
-
-    function getCurrentElementData()
-    {
-        if(getActiveElement().attr("data-element-data") && getActiveElement().attr("data-element-data") != ""){
-            var data = JSON.parse(getActiveElement().attr("data-element-data"));
-            for(var i = 0; i < data.length; i++)
-            {
-                for(var k in data[i])
-                {
-                    $("#"+k).val(data[i][k]);
-                }
-            }
-        }
-    }
-
 
     /**
      * Rotation of element option
@@ -154,11 +121,6 @@ $(document).ready(function() {
         addCurrentElementData("blur",$(this).val());
     });
 
-    $(document).on('change',".slide_in_right_opacity_from",function(){
-        console.log($(this).val());
-       $(".slide_in_right_opacity_from option[value='"+$(this).val()+"']").prop('selected',true);
-    });
-
     /**
      * Setting element opacity
      */
@@ -176,25 +138,13 @@ $(document).ready(function() {
         addCurrentElementData("txt_style",$(this).val());
     });
 
-    $(document).on('click','.animationBox',function(){
-       var animationName = $(this).attr('data-animation-name');
-       if($(this).hasClass('activeAnimation')){
-            $(this).removeClass('activeAnimation')
-       }else{
-           $(this).addClass('activeAnimation');
-       }
-       $(".current_animation_settings").empty();
-       $(".current_animation_settings").append($(".animation_setting[data-animation-name="+animationName+"]").html());
-    });
-
-
     /**
      * Toggles active element on banner
      */
     $(document).on('click','.banner-element-holder li',function(){
         var elementUid = $(this).attr('data-element-id');
         var relevans = $("#banner [data-element-id="+elementUid+"]").attr('data-relevans');
-        $("#graphicsAccordEdit input, #graphicsAccordEdit select").val("");
+        clearAllFields();
         if($(this).hasClass('active-in-element-list')){ //We pressed active element
             $(".banner-element-holder li").removeClass('active-in-element-list');
             $("#banner").children().removeClass('active-banner-element');
@@ -207,6 +157,7 @@ $(document).ready(function() {
 
             determineEditingFieldsToShow(relevans);
         }
+        getCurrentElementData("animation");
         getCurrentElementData();
     });
 });

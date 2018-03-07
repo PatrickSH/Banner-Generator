@@ -53,6 +53,8 @@ label.section-header{font-size:20px;}
 
 .banner-elements .active-in-element-list{border: 1px solid #0056b3;}
 
+.allAnimationSettings{padding: 1.25rem;}
+
 .animationBox{
     background-color: #007bff;
     color: #fff;
@@ -63,15 +65,17 @@ label.section-header{font-size:20px;}
     cursor:pointer;
 }
 
-#animationAccordEdit .allAnimationSettings{display: none !important;}
-
 .animationBox:hover,.activeAnimation{
     background-color: #fff;
     color:#007bff;
     border:1px solid #007bff;
 }
-
-.animationsHolder,.current_animation_settings,.animation_setting{
+.current_animation_settings .animation_setting{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.animationsHolder{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
