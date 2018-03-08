@@ -28,4 +28,13 @@ $(document).ready(function() {
         addCurrentElementData("slide_in_right_duration",$(this).val(),"animation");
     });
 
+    var offsetLeft = getActiveElement().css('left');
+
+    /*changeStylesheetRule(s,getActiveElementId(), "left", "0px"); //Set left out of screen
+    changeStylesheetRule(s,getActiveElementId(), "opacity", "0"); //Set opacity
+    changeStylesheetRule(s,getActiveElementId(), "transition", "left 0.5s"); //Set duration of transistion
+    setTimeout(function(){
+        changeStylesheetRule(s,getActiveElementId(), "left", offsetLeft+"px"); //Set duration of transistion
+    },2000);*/
+
 });
