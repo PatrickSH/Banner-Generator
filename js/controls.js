@@ -36,15 +36,15 @@ $(document).ready(function(){
     $("#add_text").on('click',function(){
         switch($("#txt_type").val()){
             case "p":
-                banner.append("<p id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' data-type='Header paragrah' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
+                banner.append("<p id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' style='position: absolute;' data-type='Header paragrah' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</p>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h1":
-                banner.append("<h1 id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' data-type='Header 1' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
+                banner.append("<h1 id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' style='position: absolute;' data-type='Header 1' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h1>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
             case "h2":
-                banner.append("<h2 id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' data-type='Header 2' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
+                banner.append("<h2 id='"+uniqueId()+"' class='banner-text-element "+standardClasses+"' style='position: absolute;' data-type='Header 2' data-relevans='text' data-element-id='"+elementId()+"'>"+$("#txt").val()+"</h2>");
                 $('.draggable').draggable({containment:"#banner"});
                 break;
         }

@@ -79,8 +79,7 @@ $(document).ready(function() {
     }
 
     $(document).on('click','#exportAsIframe',function(){
-        var html = "<iframe src='about:blank'>";
-            html += wrapHtml();
+        var html = "<iframe src='about:blank' srcdoc='"+wrapHtml()+"'>";
             html += "</iframe>";
         $("#iframeCode").text(html);
         $("#doneExport").modal();
