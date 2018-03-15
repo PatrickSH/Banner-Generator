@@ -55,6 +55,15 @@
         <div class="exportBox" id="exportAsIframe">
             Iframe
         </div>
+        <div class="exportBox" id="exportAsSeperateCSS">
+            Export files with seperate CSS document
+        </div>
+        <div class="exportBox" id="exportAsInlineCSS">
+            Export files with inline CSS
+        </div>
+        <div class="exportBox" id="exportAsIframe">
+            PNG image
+        </div>
     </div>
     <?php include 'Editor-Partials/Export/exportbox.php'; ?>
 </body>

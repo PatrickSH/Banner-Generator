@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    var s = document.styleSheets[0];
     /*******All*************/
     $(document).on('click','.animationBox',function(){
         clearAllFields();
@@ -13,6 +13,26 @@ $(document).ready(function() {
         }
         getCurrentElementData("animation");
     });
+
+    /********Fade in*********/
+
+    $(document).on('keyup',"#fade_in_on_hover_duration",function(){
+        changeStylesheetRule(s,getActiveElementId(), "transition", "opacity "+$(this).val()+"s");
+    });
+
+    $(document).on('change',"#fade_in_on_hover_opacity_from",function(){
+        addCurrentElementData("fade_in_on_hover_opacity_from",$(this).val(),"animation");
+        changeStylesheetRule(s,getActiveElementId(), "opacity", $(this).val());
+    });
+
+    $(document).on('change',"#fade_in_on_hover_opacity_to",function(){
+        addCurrentElementData("fade_in_on_hover_opacity_to",$(this).val(),"animation");
+        changeStylesheetRule(s,getActiveElementId()+":hover", "opacity", $(this).val());
+    });
+
+
+
+
 
     /*******Slide in right animation*********/
 

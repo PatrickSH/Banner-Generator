@@ -67,7 +67,7 @@ $(document).ready(function() {
 
     function showAllEditingFields()
     {
-        $(".banner-edit-element div").show(); //Show all our editing options from the start
+        $(".banner-edit-element > div").show(); //Show all our editing options from the start
     }
 
     /**

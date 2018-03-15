@@ -36,7 +36,13 @@ $(document).ready(function() {
     function prepareStyle()
     {
         if(stylesheetDocument){ //We want to use styledocument send ajax request to server
+            var style = "<link href='style.css' type='text/css' rel='stylesheet'/>";
+            stylesheetDocument = "";
+            for(var i = 0; i < s.cssRules.length; i++){
+                stylesheetDocument += s.cssRules[i]["cssText"];
+            }
 
+            return style;
         }else{ //We want to use styletag make it.
             var style = "<style>";
                 for(var i = 0; i < s.cssRules.length; i++){
@@ -78,12 +84,35 @@ $(document).ready(function() {
         return html;
     }
 
+    /**
+     * Generates Iframe code
+     */
     $(document).on('click','#exportAsIframe',function(){
         var html = "<iframe src='about:blank' srcdoc='"+wrapHtml()+"'>";
             html += "</iframe>";
         $("#iframeCode").text(html);
         $("#doneExport").modal();
+    });
 
+    /**
+     * Exports index.html with <style>
+     */
+    $(document).on('click','#exportAsInlineCSS',function(){
+        stylesheetDocument = false;
+        $.post("http://api.danban.dev.cc/file/textfile/store",{code: wrapHtml()},function(){
+            $("#doneExport").modal();
+        });
+    });
+
+    /**
+     * Exports with stylesheet and index.html
+     */
+    $(document).on('click','#exportAsSeperateCSS',function(){
+        stylesheetDocument = true;
+        var html = wrapHtml();
+        $.post("http://api.danban.dev.cc/file/textfile/store",{css_type: "document", css: stylesheetDocument, code: html},function(){
+            $("#doneExport").modal();
+        });
     });
 
 
