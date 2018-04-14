@@ -124,10 +124,17 @@ $(document).ready(function() {
      * Generates Iframe code
      */
     $(document).on('click','#exportAsIframe',function(){
+        stylesheetDocument = false;
         var html = "<iframe src='about:blank' srcdoc='"+wrapHtml()+"'>";
             html += "</iframe>";
         $("#iframeCode").text(html);
         $("#doneExport").modal();
+    });
+
+    $(document).on('click','#show-grid-lines',function(){
+        var wnd = window.open("about:blank", "");
+        wnd.document.write(wrapHtml());
+        wnd.document.close();
     });
 
     /**
