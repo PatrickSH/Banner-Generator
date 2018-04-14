@@ -1,10 +1,10 @@
 <div class="animation_setting" data-animation-name="fade_in_on_load">
     <div>
-        <label>Duration</label>
+        <label>Duration (In seconds)</label>
         <input type="number" name="fade_in_on_load_duration" id="fade_in_on_load_duration">
     </div>
     <div>
-        <label>Delay</label>
+        <label>Delay (In seconds)</label>
         <input type="number" name="fade_in_on_load_delay" id="fade_in_on_load_delay">
     </div>
     <div>

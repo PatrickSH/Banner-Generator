@@ -74,8 +74,7 @@ label.section-header{font-size:20px;}
 }
 .current_animation_settings .animation_setting{
     display: none;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 .animationsHolder,.exportBox,.exports{
     display: flex;

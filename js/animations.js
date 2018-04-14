@@ -37,7 +37,8 @@ $(document).ready(function() {
     $(document).on('keyup',"#fade_in_on_load_duration",function(){
         addCurrentElementData("fade_in_on_load_duration",$(this).val(),"animation");
 
-        changeStylesheetRule(s,getActiveElementId(), "transition", "opacity "+$(this).val()+"s");
+        var cssSelector = ".live " + getActiveElementId();
+        changeStylesheetRule(s,cssSelector, "transition", "opacity "+$(this).val()+"s");
     });
 
     $(document).on('keyup',"#fade_in_on_load_delay",function(){
@@ -48,7 +49,8 @@ $(document).ready(function() {
         addCurrentElementData("fade_in_on_load_opacity_from",$(this).val(),"animation");
 
         unlockNextElement($(this));
-        changeStylesheetRule(s,getActiveElementId(), "opacity", $(this).val());
+        var cssSelector = ".live " + getActiveElementId();
+        changeStylesheetRule(s,cssSelector, "opacity", $(this).val());
     });
 
     $(document).on('change',"#fade_in_on_load_opacity_to",function(){
@@ -56,8 +58,8 @@ $(document).ready(function() {
 
         var dataElementId = getActiveElement().attr('data-element-id');
         var key = "active_fade_in_load";
-        var cssSelector = getActiveElementId()+"."+key;
-        var jsToRender = {delay: $("#fade_in_on_load_delay").val(), selector: getActiveElement().attr('id'), key: key};
+        var cssSelector = ".live " + getActiveElementId()+"."+key;
+        var jsToRender = {delay: $("#fade_in_on_load_delay").val() * 1000, selector: getActiveElement().attr('id'), key: key};
 
         addCurrentElementData("fade_in_on_load_opacity_to",JSON.stringify(jsToRender),"renderjs");
         changeStylesheetRule(s,cssSelector, "opacity", $(this).val());
