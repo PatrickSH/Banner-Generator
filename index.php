@@ -23,12 +23,8 @@
     <div class="controller">
         <div class="controls">
             <div class="columnHeader">Add new elements</div>
-            <div class="texts control">
-                <label class="section-header">Helpers</label>
-                <label>Show grid lines</label>
-                <input type="checkbox" name="show-grid-lines" id="show-grid-lines" checked/>
-            </div>
             <div id="accordion">
+                <?php include 'Editor-Partials/Controls/controls.php'; ?>
                 <?php include 'Editor-Partials/Create-element/texts.php'; ?>
                 <?php include 'Editor-Partials/Create-element/dimensions.php'; ?>
                 <?php include 'Editor-Partials/Create-element/graphics.php'; ?>
