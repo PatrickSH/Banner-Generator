@@ -102,7 +102,7 @@ $(document).ready(function(){
                 var fileType = file.type.split('/')[0];
                 switch(fileType){
                     case "image":
-                        banner.append("<img id='"+uniqueId()+"' class='banner-image-element "+standardClasses+"' style='position: absolute !important;' data-relevans='image' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
+                        banner.append("<img id='"+uniqueId()+"' class='banner-image-element "+standardClasses+"' style='position: absolute !important; width:200px;' data-relevans='image' src='"+path+"' alt='' data-type='Image' data-element-id='"+elementId()+"'/>");
                         $('.draggable').draggable({containment:"#banner"});
                         break;
                     case "video":

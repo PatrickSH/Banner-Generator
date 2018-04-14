@@ -106,7 +106,7 @@ label.section-header{font-size:20px;}
     position: relative;
 }
 
-.banner-image-element{max-width:100px;}
+.banner-image-element{max-width:200px;}
 .dragger{position: absolute !important; z-index: 10;}
 
 .banner-text-element{text-decoration: inherit;}

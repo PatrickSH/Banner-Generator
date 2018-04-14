@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var stylesheetDocument = false; //If false we use style in style tag if true we use stylesheet
+    var scriptDocument = false;
     var base64Images = false;
     var cdnImages = false;
     var localImages = false;
@@ -54,6 +55,39 @@ $(document).ready(function() {
         }
     }
 
+    function prepareJs()
+    {
+        if(scriptDocument){
+        }else{
+            var js = 'window.onload = function(e){ '
+
+            $('[data-renderjs]').each(function(){
+                var parsed = JSON.parse($(this).attr('data-renderjs'));
+                for(var i = 0; i < parsed.length; i++)
+                {
+                    var key = Object.keys(parsed[i]).pop();
+                    var obj = JSON.parse(parsed[i][key]);
+                    var variable = uniqueId();
+                    if(obj.delay == 0){ // we dont want delay
+                        js += "var "+variable+" = document.getElementById('"+obj.selector+"');";
+                        js += variable+'.className += " '+obj.key+'"';
+                    }else{
+                        js += "setTimeout(function(){";
+                        js += "var "+variable+" = document.getElementById('"+obj.selector+"');";
+                        js += variable+'.className += " '+obj.key+'"';
+                        js += "},"+obj.delay+");";
+                    }
+                };
+            });
+
+            js +="}";
+
+            return "<script>"+js+"</script>";
+        }
+
+
+    }
+
     /**
      * Gets banner html
      * @returns {jQuery|HTMLElement}
@@ -75,6 +109,7 @@ $(document).ready(function() {
         var html = "<!DOCTYPE html>";
             html += "<head>";
             html += prepareStyle();
+            html += prepareJs();
             html += "</head>";
             html += "<body>";
             html += getBannerHtml().toHtml();

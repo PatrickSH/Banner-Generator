@@ -122,3 +122,8 @@ function clearAllFields()
 {
     $(".banner-edit-element input, .banner-edit-element select").val("");
 }
+
+function unlockNextElement(el)
+{
+    el.parent().next().children(2).last().attr('disabled',false);
+}

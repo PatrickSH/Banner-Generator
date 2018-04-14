@@ -12,6 +12,9 @@
                 <div class="animationBox fade_in" data-animation-name="fade_in_on_hover">
                     Fade In on hover
                 </div>
+                <div class="animationBox fade_in" data-animation-name="fade_in_on_load">
+                    Fade In on load
+                </div>
                 <div class="animationBox slide_in_left" data-animation-name="slide_in_left">
                     Slide in left
                 </div>
@@ -22,6 +25,7 @@
         </div>
         <div class="allAnimationSettings">
             <div class="current_animation_settings">
+                <?php include 'Editor-Partials/Animations/fade_in_on_load.php'; ?>
                 <?php include 'Editor-Partials/Animations/fade_in_on_hover.php'; ?>
                 <?php include 'Editor-Partials/Animations/slide_in_right.php'; ?>
                 <?php include 'Editor-Partials/Animations/slide_in_left.php'; ?>
