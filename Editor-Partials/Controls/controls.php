@@ -15,7 +15,7 @@
             </div>
             <div class="controls control">
                 <label>Run animations</label>
-                <button id="show-grid-lines">Run</button>
+                <button id="run-animations">Run</button>
             </div>
         </div>
     </div>

@@ -6,14 +6,137 @@
 
 .clear{clear: both;}
 
+/***
+colors:
+Main background: #181540
+Second background: #1C1A4C
+Text: #ebebeb
+Hover text:#fff
+***/
+
+/***Menu***/
+.menu,.right-menu{
+    width: 350px;
+    position: fixed;
+    height: 100%;
+    top:0;
+}
+
+.right-menu{right:0;}
+
+
+.create-new-element-menu,.element-list,.banner-edit-element{
+    width: 350px;
+    position: fixed;
+    height: 100%;
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+    transition: all 0.5s;
+    background-color: #181540;
+}
+
+.create-new-element-menu.active,.element-list.active{
+    left:0px;
+}
+.create-new-element-menu.inactive,.element-list.inactive{
+    left:-350px;
+}
+
+.menu .columnHeader, .right-menu .columnHeader{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    height: auto;
+}
+
+.menu #accordion,.right-menu #accordionEdit{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.menu .card,.right-menu .card, .exportBox {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    background-color: #1C1A4C;
+    color: #fff;
+    cursor:pointer;
+    margin-bottom: 0px;
+}
+
+.create-new-element-menu::-webkit-scrollbar{display: none;}
+
+.banner-element-holder .list-group li{
+    border-radius: 0px;
+    margin-bottom: 0px;
+    background-color: #1C1A4C;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.create-new-element-menu{overflow-y: auto;}
+
+.menu .btn-link,.right-menu .btn-link{
+    color:#ebebeb;
+}
+
+.menu .btn-link:hover,.right-menu .btn-link:hover{
+    color:#fff;
+}
+
+.menu .back{
+    background-image: url(../assets/icons/back.svg);
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 0;
+    right: 9px;
+}
+.menu-toolbar .close{background-image: url(../assets/icons/close.svg);}
+.menu-toolbar .show{background-image: url(../assets/icons/show.svg);}
+.menu-toolbar .close,.menu-toolbar .show{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 0;
+}
+
+.menu-header{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.menu-toolbar{
+    height: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.hide_when_menu_hidden{
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.shrink_when_menu_hidden{
+    transition: all 0.5s;
+}
+
 /****Controls****/
 textarea, input, select, button{display: block; margin-bottom:5px;}
-
-.controller,.exports{width:1200px;margin:0 auto; display: flex;}
-
 .controls{flex:1;}
 
-.banner-edit-element{flex:1;}
+.banner-edit-element{position:fixed; right:0;}
 .columnHeader{
     flex-grow: 1;
     height:80px;
@@ -21,9 +144,23 @@ textarea, input, select, button{display: block; margin-bottom:5px;}
     font-size: 20px;
 }
 
-.banner-elements{flex:1; padding-left: 30px;}
+.exports{
+    padding-right: 20px;
+    padding-left: 20px;
+}
 
-.banner-element-holder{height:200px; width:100%; overflow-y: scroll;}
+
+.banner-element-holder{
+    height: auto;
+    width: 100%;
+    overflow-y: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.banner-element-holder .list-group{
+    margin-top: 0px;
+}
 
 .banner-element-holder p{cursor: pointer; text-decoration: underline;}
 
@@ -32,8 +169,6 @@ textarea, input, select, button{display: block; margin-bottom:5px;}
 label.section-header{font-size:20px;}
 
 .controls label{display: block; margin-bottom:5px;}
-
-.controls .control{margin-bottom:20px;}
 
 .dragger{width: fit-content; cursor: pointer;}
 
@@ -55,19 +190,7 @@ label.section-header{font-size:20px;}
 
 .allAnimationSettings{padding: 1.25rem;}
 
-.animationBox,
-.exportBox{
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    transition: all 0.5s;
-    border:1px solid #007bff;
-    cursor:pointer;
-}
-
-.animationBox:hover,.activeAnimation,
-.exportBox:hover{
+.animationBox:hover,.activeAnimation{
     background-color: #fff;
     color:#007bff;
     border:1px solid #007bff;
@@ -75,11 +198,6 @@ label.section-header{font-size:20px;}
 .current_animation_settings .animation_setting{
     display: none;
     flex-direction: column;
-}
-.animationsHolder,.exportBox,.exports{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 
@@ -96,7 +214,7 @@ label.section-header{font-size:20px;}
 .banner{
     width:200px;
     height:200px;
-    background-color:red;
+    background-color:#181540;
     box-sizing: border-box;
     display: flex;
     margin: 0 auto;

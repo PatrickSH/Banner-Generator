@@ -131,7 +131,10 @@ $(document).ready(function() {
         $("#doneExport").modal();
     });
 
-    $(document).on('click','#show-grid-lines',function(){
+    /*
+    Runs banner for testing in new tab
+     */
+    $(document).on('click','#run-animations',function(){
         var wnd = window.open("about:blank", "");
         wnd.document.write(wrapHtml());
         wnd.document.close();

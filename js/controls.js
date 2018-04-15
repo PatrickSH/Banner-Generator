@@ -14,6 +14,37 @@ $(document).ready(function(){
         }
     });
 
+    $(document).on('click','.back',function () {
+        var parent = $(this).parent(3);
+        parent.addClass('inactive');
+
+        setTimeout(function(){
+            if(parent.hasClass('create-new-element-menu')){
+                parent.next().removeClass('inactive').addClass('active');
+            }else{
+                parent.prev().removeClass('inactive').addClass('active');
+            }
+        },600);
+    });
+
+    $(document).on('click','.close',function(){
+       $(this).removeClass('close').addClass('show');
+       var parent_menu = $(this).parent(4).attr('class').split(' ')[0];
+       $("."+parent_menu+" .hide_when_menu_hidden").css('opacity','0');
+       setTimeout(function(){
+           $("."+parent_menu+" .shrink_when_menu_hidden").css('width','55px');
+       },600);
+    });
+
+    $(document).on('click','.show',function(){
+        $(this).removeClass('show').addClass('close');
+        var parent_menu = $(this).parent(4).attr('class').split(' ')[0];
+        $("."+parent_menu+" .shrink_when_menu_hidden").css('width','350px');
+        setTimeout(function(){
+            $("."+parent_menu+" .hide_when_menu_hidden").css('opacity','1');
+        },600);
+    });
+
     /**
      * Sets height and width of banner
      */
