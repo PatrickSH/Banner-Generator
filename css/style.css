@@ -6,6 +6,32 @@
 
 .clear{clear: both;}
 
+body .standard_button{
+    width: 120px;
+    border: 1px solid #181540;
+    background-color: #181540;
+    color: #ebebeb;
+    cursor: pointer;
+    padding: 5px;
+}
+
+body .standard_s_label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #ebebeb;
+}
+
+body .no-b-radius{border-radius: 0px;}
+
+body .standard_txtarea{
+    border-radius: 0px;
+    resize: none;
+}
+
+body .standard_select{border-radius: 0px;}
+
 /***
 colors:
 Main background: #181540
@@ -20,6 +46,7 @@ Hover text:#fff
     position: fixed;
     height: 100%;
     top:0;
+    z-index: 2;
 }
 
 .right-menu{right:0;}
@@ -221,6 +248,7 @@ label.section-header{font-size:20px;}
     margin-top:50px;
     margin-bottom: 20px;
     position: relative;
+    z-index: -1;
 }
 
 .banner-image-element{max-width:200px;}

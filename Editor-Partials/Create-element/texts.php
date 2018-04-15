@@ -9,21 +9,21 @@
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
             <div class="form-group">
-                <label for="txt">Text</label>
-                <textarea name="txt" class="form-control" id="txt" placeholder="Text"></textarea>
+                <label for="txt" class="standard_s_label">Text</label>
+                <textarea name="txt" class="form-control standard_txtarea" id="txt" placeholder="Text"></textarea>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="txt_type">Text type</label>
+                    <label class="input-group-text standard_select" for="txt_type">Text type</label>
                 </div>
-                <select class="custom-select" name="txt_type" id="txt_type">
+                <select class="custom-select standard_select" name="txt_type" id="txt_type">
                     <option value="p">Paragraph</option>
                     <option value="h1">H1</option>
                     <option value="h2">H2</option>
                 </select>
             </div>
-            <button id="add_text" class="btn btn-primary">Add text</button>
-            <label>Image</label>
+            <button id="add_text" class="standard_button">Add text</button>
+            <label class="standard_s_label">Image</label>
             <form method="post" action="http://api.danban.dev.cc/file/store?file_type_id=1&user_id=1&is_in_use=1"
                   class="dropzone"
                   id="file-upload" enctype="multipart/form-data"></form>

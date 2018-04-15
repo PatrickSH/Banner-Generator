@@ -10,10 +10,10 @@
         <div class="card-body">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="">Height X Width</span>
+                    <span class="input-group-text no-b-radius" id="">Height X Width</span>
                 </div>
-                <input type="number" class="form-control" name="height" id="height" value="200" placeholder="Height"/>
-                <input type="number" class="form-control" name="width" id="width" value="200" placeholder="Width"/>
+                <input type="number" class="form-control no-b-radius" name="height" id="height" value="200" placeholder="Height"/>
+                <input type="number" class="form-control no-b-radius" name="width" id="width" value="200" placeholder="Width"/>
             </div>
         </div>
     </div>
