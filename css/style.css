@@ -92,7 +92,9 @@ Hover text:#fff
     margin-bottom: 0px;
 }
 
-.create-new-element-menu::-webkit-scrollbar{display: none;}
+.create-new-element-menu::-webkit-scrollbar,.banner-edit-element::-webkit-scrollbar{display: none;}
+
+.banner-edit-element{overflow-y: auto;}
 
 .banner-element-holder .list-group li{
     border-radius: 0px;
@@ -248,7 +250,6 @@ label.section-header{font-size:20px;}
     margin-top:50px;
     margin-bottom: 20px;
     position: relative;
-    z-index: -1;
 }
 
 .banner-image-element{max-width:200px;}

@@ -67,16 +67,7 @@ $(document).ready(function() {
                 {
                     var key = Object.keys(parsed[i]).pop();
                     var obj = JSON.parse(parsed[i][key]);
-                    var variable = uniqueId();
-                    if(obj.delay == 0){ // we dont want delay
-                        js += "var "+variable+" = document.getElementById('"+obj.selector+"');";
-                        js += variable+'.className += " '+obj.key+'"';
-                    }else{
-                        js += "setTimeout(function(){";
-                        js += "var "+variable+" = document.getElementById('"+obj.selector+"');";
-                        js += variable+'.className += " '+obj.key+'"';
-                        js += "},"+obj.delay+");";
-                    }
+                    js = getNeededAnimation(js,obj);
                 };
             });
 

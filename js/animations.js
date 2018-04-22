@@ -19,17 +19,20 @@ $(document).ready(function() {
     $(document).on('change',"#fade_in_on_hover_opacity_from",function(){
         addCurrentElementData("fade_in_on_hover_opacity_from",$(this).val(),"animation");
         unlockNextElement($(this));
-        changeStylesheetRule(s,getActiveElementId(), "opacity", $(this).val());
+        var cssSelector = ".live " + getActiveElementId();
+        changeStylesheetRule(s,cssSelector, "opacity", $(this).val());
     });
 
     $(document).on('keyup',"#fade_in_on_hover_duration",function(){
-        unlockNextElement($(this));
-        changeStylesheetRule(s,getActiveElementId(), "transition", "opacity "+$(this).val()+"s");
+        var cssSelector = ".live " + getActiveElementId();
+        console.log("opacity "+$(this).val()+"s");
+        changeStylesheetRule(s,cssSelector, "transition", "opacity "+$(this).val()+"s");
     });
 
     $(document).on('change',"#fade_in_on_hover_opacity_to",function(){
         addCurrentElementData("fade_in_on_hover_opacity_to",$(this).val(),"animation");
-        changeStylesheetRule(s,getActiveElementId()+":hover", "opacity", $(this).val());
+        var cssSelector = ".live " + getActiveElementId()+":hover";
+        changeStylesheetRule(s,cssSelector, "opacity", $(this).val());
     });
 
     /********Fade in on load*********/
@@ -71,19 +74,20 @@ $(document).ready(function() {
 
     /*******Slide in right animation*********/
 
-    $(document).on('change',"#slide_in_right_opacity_from",function(){
-        addCurrentElementData("slide_in_right_opacity_from",$(this).val(),"animation");
-    });
+    $(document).on('keyup',"#slide_in_left_duration",function(){
+        var cssSelector = ".live " + getActiveElementId()+"."+key;
+        var offsetLeft = getActiveElement().css('left');
+        var key = "active_slide_in_left";
 
-    $(document).on('change',"#slide_in_right_opacity_to",function(){
-        addCurrentElementData("slide_in_right_opacity_to",$(this).val(),"animation");
-    });
-
-    $(document).on('keyup',"#slide_in_right_duration",function(){
+        //Initial values
+        changeStylesheetRule(s,cssSelector, "left", "-200px");
+        changeStylesheetRule(s,cssSelector, "opacity", "0");
+        //Values once run
+        var jsToRender = {delay: $("#slide_in_left_delay").val() * 1000, selector: getActiveElement().attr('id'), key: key};
         addCurrentElementData("slide_in_right_duration",$(this).val(),"animation");
     });
 
-    var offsetLeft = getActiveElement().css('left');
+
 
     /*changeStylesheetRule(s,getActiveElementId(), "left", "0px"); //Set left out of screen
     changeStylesheetRule(s,getActiveElementId(), "opacity", "0"); //Set opacity

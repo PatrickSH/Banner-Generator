@@ -9,6 +9,7 @@
     <script src="js/style-handler.js"></script>
     <script src="js/edit-element.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/renderanimationjavascript.js"></script>
     <script src="js/export.js"></script>
     <script src="js/controls.js"></script>
     <link rel="stylesheet" type="text/css" href="banner-specific/css/banner-style.css">
