@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div id="banner" class="banner">
+    <div id="banner" class="banner" style="position: relative;">
         <div class="grid"></div>
     </div>
     <?php include 'Editor-Partials/Export/exportbox.php'; ?>

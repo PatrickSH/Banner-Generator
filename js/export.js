@@ -87,6 +87,8 @@ $(document).ready(function() {
     {
         var bannerHtml = $($("#banner").get(0).outerHTML); //Make object we can play with that wont affect actual banner
         $(bannerHtml).addClass('live');
+        $(bannerHtml).css('position','relative !important');
+        $(bannerHtml).find('.remove-left').css('left','');
         removeGrid(bannerHtml); //Remove grid
 
         return bannerHtml;
