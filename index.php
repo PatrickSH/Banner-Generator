@@ -12,6 +12,7 @@
     <script src="js/renderanimationjavascript.js"></script>
     <script src="js/export.js"></script>
     <script src="js/controls.js"></script>
+    <script src="js/overview.js"></script>
     <link rel="stylesheet" type="text/css" href="banner-specific/css/banner-style.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/exportbox.css">
@@ -93,6 +94,10 @@
                     <?php include 'Editor-Partials/Edit-element/texts.php'; ?>
                     <?php include 'Editor-Partials/Edit-element/graphics.php'; ?>
                     <?php include 'Editor-Partials/Edit-element/animations.php'; ?>
+                </div>
+                <div class="menu-header hide_when_menu_hidden">
+                    <div class="columnHeader">Overview</div>
+                    <?php include 'Editor-Partials/Overview/animations.php'; ?>
                 </div>
             </div>
         </div>

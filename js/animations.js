@@ -62,15 +62,15 @@ $(document).ready(function() {
         var dataElementId = getActiveElement().attr('data-element-id');
         var key = "active_fade_in_load";
         var cssSelector = ".live " + getActiveElementId()+"."+key;
-        var jsToRender = {delay: $("#fade_in_on_load_delay").val() * 1000, selector: getActiveElement().attr('id'), key: key};
+        var jsToRender = {delay: $("#fade_in_on_load_delay").val() * 1000,
+            selector: getActiveElement().attr('id'),
+            animatingTime: $("#fade_in_on_load_duration").val(),
+            key: key
+        };
 
         addCurrentElementData("fade_in_on_load_opacity_to",JSON.stringify(jsToRender),"renderjs");
         changeStylesheetRule(s,cssSelector, "opacity", $(this).val());
     });
-
-
-
-
 
     /*******Slide in left animation*********/
 
@@ -91,7 +91,11 @@ $(document).ready(function() {
         //Values once run
         changeStylesheetRule(s,cssSelector+"."+key, "left", offsetLeft+" !important");
         changeStylesheetRule(s,cssSelector+"."+key, "opacity", "1");
-        var jsToRender = {delay: $("#slide_in_left_delay").val() * 1000, selector: getActiveElement().attr('id'), key: key};
+        var jsToRender = {delay: $("#slide_in_left_delay").val() * 1000,
+            selector: getActiveElement().attr('id'),
+            animatingTime: $(this).val(),
+            key: key
+        };
 
         addCurrentElementData("slide_in_left_duration",JSON.stringify(jsToRender),"renderjs");
     });
@@ -122,19 +126,10 @@ $(document).ready(function() {
         //changeStylesheetRule(s,cssSelector+"."+key, "right", offsetRight+" !important");
         var jsToRender = {delay: $("#slide_in_right_delay").val() * 1000,
             selector: getActiveElement().attr('id'),
+            animatingTime: $(this).val(),
             key: key,
         };
 
         addCurrentElementData("slide_in_right_duration",JSON.stringify(jsToRender),"renderjs");
     });
-
-
-
-    /*changeStylesheetRule(s,getActiveElementId(), "left", "0px"); //Set left out of screen
-    changeStylesheetRule(s,getActiveElementId(), "opacity", "0"); //Set opacity
-    changeStylesheetRule(s,getActiveElementId(), "transition", "left 0.5s"); //Set duration of transistion
-    setTimeout(function(){
-        changeStylesheetRule(s,getActiveElementId(), "left", offsetLeft+"px"); //Set duration of transistion
-    },2000);*/
-
 });

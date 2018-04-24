@@ -229,6 +229,19 @@ label.section-header{font-size:20px;}
     flex-direction: column;
 }
 
+.animationlist{
+    position: relative;
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #181540;
+    padding-bottom: 5px;
+}
+
+.animationlist > li{margin-bottom: 15px;}
+
+.animationlist ul{list-style: none;}
 
 /******Banner*****/
 
