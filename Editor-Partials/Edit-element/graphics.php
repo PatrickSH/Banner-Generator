@@ -36,13 +36,9 @@
                     <option value="wavy">Wavy</option>
                 </select>
             </div>
-            <div class="font_css_link_holder">
+            <div class="font_css_link_single_holder">
                 <label>Font CSS link</label>
-                <input type="text" name="font_css_link" id="font_css_link" placeholder="Font CSS link"/>
-            </div>
-            <div class="font_css_family_holder">
-                <label>Font CSS Family</label>
-                <input type="text" name="font_css_family" id="font_css_family" placeholder="Font CSS link"/>
+                <select name="font_css_link_single" id="font_css_link_single"></select>
             </div>
             <div class="rotation_holder">
                 <label>Image rotation</label>

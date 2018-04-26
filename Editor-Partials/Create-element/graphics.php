@@ -14,9 +14,7 @@
             <label class="standard_s_label">Text color</label>
             <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
             <label class="standard_s_label">Font CSS link</label>
-            <input type="text" name="font_css_link" id="font_css_link" placeholder="Font CSS link"/>
-            <label class="standard_s_label">Font CSS Family</label>
-            <input type="text" name="font_css_family" id="font_css_family" placeholder="Font CSS link"/>
+            <select name="font_css_link" id="font_css_link"></select>
             <label class="standard_s_label">Banner border width(PX)</label>
             <input type="number" name="banner_border_width" id="banner_border_width" placeholder="Banner border width(PX)"/>
             <label class="standard_s_label">Banner border color</label>

@@ -94,6 +94,16 @@ $(document).ready(function() {
         return bannerHtml;
     }
 
+    function getFontLinks()
+    {
+        var htm = "";
+        $("link[data-type=google-font]").each(function(){
+           htm += $(this).get(0).outerHTML;
+        });
+
+        return htm;
+    }
+
     /**
      * Wraps in html mandatory tags
      * @returns {string}
@@ -102,6 +112,7 @@ $(document).ready(function() {
     {
         var html = "<!DOCTYPE html>";
             html += "<head>";
+            html += getFontLinks();
             html += prepareStyle();
             html += prepareJs();
             html += "</head>";

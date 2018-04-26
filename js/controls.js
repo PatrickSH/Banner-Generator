@@ -95,19 +95,11 @@ $(document).ready(function(){
     /**
      * Adds CSS font link
      */
-    $("#font_css_link").on('keyup',function(){
-        if(!isAssetLoaded($(this).val(), 'link', 'href') && $(this).val() != ""){
-            $("head").prepend("<link href='"+$(this).val()+"' rel='stylesheet'>");
-        }
-    });
-
-    /**
-    * Adds CSS font family
-    */
-    $("#font_css_family").on('keyup',function(){
-        if($(this).val() != ""){
-            changeStylesheetRule(s,"#banner", "font-family", $(this).val());
-        }
+    $(document).on('change',"#font_css_link",function(){
+        var link = 'https://fonts.googleapis.com/css?family='+$(this).val();
+        $("link[data-family='"+$(this).val()+"']").remove();
+        $("head").prepend("<link href='"+link+"' rel='stylesheet' data-type='google-font' data-family='"+$(this).val()+"'>");
+        changeStylesheetRule(s,"#banner", "font-family", $(this).val());
     });
 
     /**
