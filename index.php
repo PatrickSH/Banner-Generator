@@ -33,8 +33,14 @@
                     <div class="back"></div>
                 </div>
                 <div id="accordion" class="hide_when_menu_hidden">
-                    <?php include 'Editor-Partials/Controls/controls.php'; ?>
                     <?php include 'Editor-Partials/Create-element/texts.php'; ?>
+                    <?php include 'Editor-Partials/Create-element/imgvid.php'; ?>
+                </div>
+                <div class="menu-header hide_when_menu_hidden">
+                    <div class="columnHeader">Banner specific settings</div>
+                </div>
+                <div id="accordion" class="hide_when_menu_hidden">
+                    <?php include 'Editor-Partials/Controls/controls.php'; ?>
                     <?php include 'Editor-Partials/Create-element/dimensions.php'; ?>
                     <?php include 'Editor-Partials/Create-element/graphics.php'; ?>
                 </div>
@@ -103,7 +109,7 @@
         </div>
     </div>
 
-    <div id="banner" class="banner" style="position: relative;">
+    <div id="banner" class="banner" style="position: relative; background-color:#181540;">
         <div class="grid"></div>
     </div>
     <?php include 'Editor-Partials/Export/exportbox.php'; ?>

@@ -2,7 +2,7 @@
     <div class="card-header" id="headingOne">
         <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Content
+                Text content
             </button>
         </h5>
     </div>
@@ -23,10 +23,6 @@
                 </select>
             </div>
             <button id="add_text" class="standard_button">Add text</button>
-            <label class="standard_s_label">Image</label>
-            <form method="post" action="http://api.danban.dev.cc/file/store?file_type_id=1&user_id=1&is_in_use=1"
-                  class="dropzone"
-                  id="file-upload" enctype="multipart/form-data"></form>
         </div>
     </div>
 </div>
