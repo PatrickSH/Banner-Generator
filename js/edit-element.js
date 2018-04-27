@@ -26,7 +26,7 @@ $(document).ready(function() {
         'text'
     ]))
 
-    $(".txt_color_holder").attr('data-relevant-for',JSON.stringify([
+    $(".txt_color_single_holder").attr('data-relevant-for',JSON.stringify([
         'text'
     ]));
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
             $("#font_css_link_single").append('<option value="'+current.family+'">'+current.family+'</option>');
         }
     });
-    
+
     /**
      * Rotation of element option
      */
@@ -117,6 +117,14 @@ $(document).ready(function() {
         changeStylesheetRule(s,getActiveElementId(), "font-family", $(this).val());
 
         addCurrentElementData("font_css_link_single",$(this).val());
+    });
+
+    /**
+     * Changes text color of single element
+     */
+    $(document).on('change','#txt_color_single',function(){
+        changeStylesheetRule(s,getActiveElementId(), "color", $(this).val());
+        addCurrentElementData("txt_color_single",$(this).val());
     });
 
     /**

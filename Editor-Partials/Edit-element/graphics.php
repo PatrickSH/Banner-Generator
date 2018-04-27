@@ -19,9 +19,9 @@
                       id="file-upload" enctype="multipart/form-data"></form>
             </div>
             <div class="clear"></div>
-            <div class="txt_color_holder">
+            <div class="txt_color_single_holder">
                 <label>Text color</label>
-                <input type="color" name="txt_color" id="txt_color" placeholder="Text color"/>
+                <input type="color" name="txt_color_single" id="txt_color_single" placeholder="Text color"/>
             </div>
             <div class="txt_style_holder">
                 <label>Text style</label>
