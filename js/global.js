@@ -23,7 +23,7 @@ function refreshElementList()
     $(".banner-element-holder").empty();
     var html = '<ul class="list-group">';
     $(".banner-element").each(function(){
-        html += "<li class='list-group-item' data-element-id='"+$(this).attr('data-element-id')+"' >"+$(this).attr('data-type')+" - "+$(this).attr('data-element-id')+"</li>";
+        html += "<li class='list-group-item' data-element-id='"+$(this).attr('data-element-id')+"' >"+$(this).attr('data-type')+" - "+$(this).attr('data-element-id')+"<img src='/Banner-Generator/assets/icons/delete-item.svg' data-trash-element='"+$(this).attr('data-element-id')+"' class='trash-item'/></li>";
     });
     html +='</ul>';
     $(".banner-element-holder").append(html);

@@ -169,6 +169,23 @@ $(document).ready(function() {
     });
 
     /**
+     * Deletes a banner element
+     */
+    $(document).on('click',".trash-item",function () {
+        var element_id = $(this).attr('data-trash-element');
+        swal({
+            title: "Are you sure?",
+            text: "This action cannot be undone!",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                $("[data-element-id='"+element_id+"']").remove();
+            }
+        });
+    });
+
+    /**
      * Toggles active element on banner
      */
     $(document).on('click','.banner-element-holder li',function(){

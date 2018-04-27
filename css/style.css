@@ -239,6 +239,27 @@ label.section-header{font-size:20px;}
     padding-bottom: 5px;
 }
 
+.trash-item{
+    height: 15px;
+    width: 15px;
+    margin-left: 20px;
+    margin-top: -3px;
+    cursor: pointer;
+}
+
+body .swal-modal{background-color: #1C1A4C;}
+body .swal-title, body .swal-text{color:#fff;}
+
+body .swal-button--danger,body .swal-button--cancel,body .swal-button--danger:active,body .swal-button--cancel:active{
+    width: 120px;
+    border: 1px solid #181540;
+    background-color: #181540;
+    color: #ebebeb;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
 .animationlist > li{margin-bottom: 15px;}
 
 .animationlist ul{list-style: none;}
