@@ -90,16 +90,14 @@ $(document).ready(function() {
     }
 
 
-    //$(document).load(function(){
-        $.get("https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyCwQeKSZ3uS0CfXX3Xsolva6rl--EAqj5U",{},function(data){
-            for(var i = 0; i < data.items.length; i++){
-                var current = data.items[i];
-                $("#font_css_link").append('<option value="'+current.family+'">'+current.family+'</option>');
-                $("#font_css_link_single").append('<option value="'+current.family+'">'+current.family+'</option>');
-            }
-        });
-    //});
-
+    $.get("http://api.danban.dev.cc/fonts/google/get",{},function(data){
+        for(var i = 0; i < data.items.length; i++){
+            var current = data.items[i];
+            $("#font_css_link").append('<option value="'+current.family+'">'+current.family+'</option>');
+            $("#font_css_link_single").append('<option value="'+current.family+'">'+current.family+'</option>');
+        }
+    });
+    
     /**
      * Rotation of element option
      */
