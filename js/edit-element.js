@@ -10,6 +10,10 @@ $(document).ready(function() {
         'image'
     ]));
 
+    $(".media-dimensions").attr('data-relevant-for',JSON.stringify([
+        'video', 'image'
+    ]));
+
     $(".txt_holder").attr('data-relevant-for',JSON.stringify([
         'text'
     ]));
@@ -44,6 +48,10 @@ $(document).ready(function() {
 
     $(".image_rotation_holder").attr('data-relevant-for',JSON.stringify([
         'image'
+    ]));
+
+    $(".font_css_link_single_holder").attr('data-relevant-for',JSON.stringify([
+        'text'
     ]));
 
     $(".image_width_holder").attr('data-relevant-for',JSON.stringify([
@@ -82,8 +90,11 @@ $(document).ready(function() {
             var relevansFor = $(this).attr('data-relevant-for');
             if(typeof relevansFor !== "undefined"){
                 relevansFor = JSON.parse(relevansFor);
+                console.log(relevansFor,relevans);
                 if(relevansFor.indexOf(relevans) == -1){ // Not relevant for our current item - hide
                     $(this).hide();
+                }else{
+                    $(this).show();
                 }
             }
         });
@@ -185,6 +196,9 @@ $(document).ready(function() {
         });
     });
 
+    /**
+     * Changes text on change to text edit box
+     */
     $(document).on('keyup','#txtEdit',function () {
         getActiveElement().text($(this).val());
     })

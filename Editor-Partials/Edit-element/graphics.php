@@ -12,13 +12,6 @@
                 <label>Background color</label>
                 <input type="color" name="bg_color" id="bg_color" placeholder="Background color"/>
             </div>
-            <div class="file-upload_holder">
-                <label>Image</label>
-                <form method="post" action="http://api.danban.dev.cc/file/store?file_type_id=1&user_id=1&is_in_use=1"
-                      class="dropzone"
-                      id="file-upload" enctype="multipart/form-data"></form>
-            </div>
-            <div class="clear"></div>
             <div class="txt_color_single_holder">
                 <label>Text color</label>
                 <input type="color" name="txt_color_single" id="txt_color_single" placeholder="Text color"/>

@@ -100,6 +100,7 @@
                 <div id="accordionEdit" class="hide_when_menu_hidden">
                     <?php include 'Editor-Partials/Edit-element/texts.php'; ?>
                     <?php include 'Editor-Partials/Edit-element/graphics.php'; ?>
+                    <?php include 'Editor-Partials/Edit-element/media-dimensions.php'; ?>
                     <?php include 'Editor-Partials/Edit-element/animations.php'; ?>
                 </div>
                 <div class="menu-header hide_when_menu_hidden">
