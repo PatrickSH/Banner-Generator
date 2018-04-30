@@ -185,6 +185,10 @@ $(document).ready(function() {
         });
     });
 
+    $(document).on('keyup','#txtEdit',function () {
+        getActiveElement().text($(this).val());
+    })
+
     /**
      * Toggles active element on banner
      */
@@ -203,6 +207,9 @@ $(document).ready(function() {
             $("#banner [data-element-id='"+elementUid+"']").addClass('active-banner-element');
 
             determineEditingFieldsToShow(relevans);
+        }
+        if(currentElHasRelevans("text")){ //If this is a text field we want to assing that text to edit box.
+            $("#txtEdit").text(getActiveElement().text());
         }
         getCurrentElementData("animation");
         getCurrentElementData();

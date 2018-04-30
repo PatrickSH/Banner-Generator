@@ -127,3 +127,14 @@ function unlockNextElement(el)
 {
     el.parent().next().children(2).last().attr('disabled',false);
 }
+
+/*
+Cheks if current element has a specific relevans.
+ */
+function currentElHasRelevans(relevans)
+{
+    if(getActiveElement().attr('data-relevans') == relevans)
+        return true;
+
+    return false;
+}
